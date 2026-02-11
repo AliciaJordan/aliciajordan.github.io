@@ -1,10 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Portafolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Acuario - Alicia CS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hola, soy Alicia </h1>
-    <p> portafolio.</p>
+    <main class="main-content">
+        <!-- COLUMNA IZQUIERDA - SIDEBAR -->
+        <aside class="info-sidebar">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h1 class="profile-name">Alicia Jordan</h1>
+            <div class="profile-title">Computer Science | Cybersecurity</div>
+            <p class="profile-bio">
+                Estudiante apasionada por la informática, IA y desarrollo web. Me gusta crear proyectos interactivos y aprender nuevas tecnologías.
+            </p>
+
+            <div class="info-section">
+                <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+                <div class="education-item">
+                    <span class="education-title">Ingeniería en Ciencias Computacionales | B.Sc. Cybersecurity</span>
+                    <div class="education-meta">
+                        <span><i class="fas fa-calendar"></i> 2023 - 2027</span>
+                        <span><i class="fas fa-university"></i> Universidad Muajaja</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-code"></i> Habilidades</h3>
+                <div class="skills-grid">
+                    <span class="skill-item">C / C++</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">ML</span>
+                    <span class="skill-item">Algorithms</span>
+                    <span class="skill-item">Java</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </aside>
+
+        <!-- ============================ -->
+        <!-- COLUMNA DERECHA - ACUARIO    -->
+        <!-- ============================ -->
+        <div class="aquarium-column">
+            <div class="aquarium-container">
+                <div class="aquarium-background">
+                    <img src="img/ocean_bg.png" alt="Fondo de océano" class="aquarium-bg">
+
+                    <!-- Peces interactivos -->
+                    <a href="shark-section.html" class="fish-link" id="shark" style="top:10%; left:75%;">
+                        <img src="img/shark.png" alt="Tiburón" class="fish-img">
+                        <span class="fish-label">Proyecto Especial</span>
+                    </a>
+
+                    <a href="algoritmos.html" class="fish-link" style="top:25%; left:15%;">
+                        <img src="img/fish-1.png" alt="Algoritmos" class="fish-img">
+                        <span class="fish-label">Proyectos</span>
+                    </a>
+
+                    <a href="web-dev.html" class="fish-link" style="top:55%; left:65%;">
+                        <img src="img/fish-2.png" alt="Web Dev" class="fish-img">
+                        <span class="fish-label">Career Path</span>
+                    </a>
+
+                    <a href="ai-ml.html" class="fish-link" style="top:15%; left:40%;">
+                        <img src="img/fish-3.png" alt="IA & ML" class="fish-img">
+                        <span class="fish-label">IA & ML</span>
+                    </a>
+
+                    <a href="databases.html" class="fish-link" style="top:70%; left:30%;">
+                        <img src="img/fish-4.png" alt="Bases de Datos" class="fish-img">
+                        <span class="fish-label">Competencias</span>
+                    </a>
+                </div>
+
+                <div class="aquarium-instructions">
+                    <p><i class="fas fa-mouse-pointer"></i> Pasa el cursor sobre los peces</p>
+                    <p><i class="fas fa-hand-pointer"></i> Imágenes de Canva</p>
+                </div>
+            </div>
+
+            <!-- ============================ -->
+            <!-- GRID DE PECES - SHOWCASE     -->
+            <!-- ============================ -->
+            <div class="fish-showcase">
+                <h3><i class="fas fa-fish"></i> Los Peces del Acuario</h3>
+                <div class="fish-grid">
+                    <div class="fish-card">
+                        <div class="fish-icon" style="background: linear-gradient(135deg, var(--blue-dark), var(--blue-medium));">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <span class="fish-name">Algoritmos</span>
+                        <span class="fish-desc">Estructuras de datos, optimización, complejidad</span>
+                        <span class="fish-tag">8 proyectos</span>
+                    </div>
+                    <div class="fish-card">
+                        <div class="fish-icon" style="background: linear-gradient(135deg, var(--blue-medium), var(--blue-soft));">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span class="fish-name">Web Dev</span>
+                        <span class="fish-desc">Frontend, backend, APIs, responsive</span>
+                        <span class="fish-tag">12 proyectos</span>
+                    </div>
+                    <div class="fish-card">
+                        <div class="fish-icon" style="background: linear-gradient(135deg, var(--blue-soft), var(--light-blue));">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="fish-name">IA & ML</span>
+                        <span class="fish-desc">Redes neuronales, NLP, visión computacional</span>
+                        <span class="fish-tag">6 proyectos</span>
+                    </div>
+                    <div class="fish-card">
+                        <div class="fish-icon" style="background: linear-gradient(135deg, var(--blue-dark), var(--blue-soft));">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <span class="fish-name">Bases de Datos</span>
+                        <span class="fish-desc">SQL, NoSQL, optimización, modelado</span>
+                        <span class="fish-tag">7 proyectos</span>
+                    </div>
+                    <div class="fish-card">
+                        <div class="fish-icon" style="background: linear-gradient(135deg, var(--blue-medium), var(--blue-dark));">
+                            <i class="fas fa-shark"></i>
+                        </div>
+                        <span class="fish-name">Tiburón</span>
+                        <span class="fish-desc">Proyecto especial - Full stack</span>
+                        <span class="fish-tag">★ destacado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER                         -->
+    <footer class="main-footer">
+        <p>Portafolio Acuario CS — 2025</p>
+    </footer>
+
+    <script>
+        // Animacion inicial de peces
+        document.addEventListener('DOMContentLoaded', function() {
+            const fishLinks = document.querySelectorAll('.fish-link');
+            fishLinks.forEach((fish, index) => {
+                setTimeout(() => {
+                    fish.style.transition = 'none';
+                    fish.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        fish.style.transition = 'transform 0.3s';
+                        fish.style.transform = 'scale(1)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
 </body>
 </html>
