@@ -1,20 +1,16 @@
-/* ============================= */
-/* RESET                         */
-/* ============================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ============================= */
-/* TIPOGRAFÍA                    */
-/* ============================= */
+/* Tipo */
 body {
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1.6;
     color: #1e1e1e;
-    background-color: #f4efe6; /* crema editorial */
+    background-color: #f4efe6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,9 +21,7 @@ body {
     color: white;
 }
 
-/* ============================= */
-/* VARIABLES                     */
-/* ============================= */
+/* VARIABLES */
 :root {
     --deep-blue: #0f3057;
     --ocean: #00587a;
@@ -37,9 +31,7 @@ body {
     --text-light: #555;
 }
 
-/* ============================= */
-/* CONTENEDOR PRINCIPAL          */
-/* ============================= */
+/* CONTENEDOR PRINCIPAL */
 .main-content {
     width: 100%;
     max-width: 1400px;
@@ -51,9 +43,7 @@ body {
     align-items: start;
 }
 
-/* ============================= */
-/* SIDEBAR                       */
-/* ============================= */
+/* SIDEBAR */
 .info-sidebar {
     background-color: var(--white);
     border-radius: 20px;
@@ -99,9 +89,7 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* ============================= */
-/* SECCIONES                     */
-/* ============================= */
+/* SECCIONES */
 .info-section {
     margin-bottom: 2rem;
 }
@@ -154,9 +142,7 @@ body {
     color: var(--ocean);
 }
 
-/* ============================= */
-/* SKILLS                        */
-/* ============================= */
+/* SKILLS */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -176,15 +162,13 @@ body {
 }
 
 .skill-item:hover {
-    background-color: var(--deep-blue);
+    background-color: rgb(228, 179, 73);
     color: white;
-    border-color: var(--deep-blue);
+    border-color: var(--white);
     transform: translateY(-2px);
 }
 
-/* ============================= */
-/* SOCIAL LINKS                  */
-/* ============================= */
+/* SOCIAL LINKS */
 .social-links {
     display: flex;
     gap: 1rem;
@@ -211,9 +195,7 @@ body {
     border-color: var(--deep-blue);
 }
 
-/* ============================= */
-/* COLUMNA ACUARIO               */
-/* ============================= */
+/* COLUMNA ACUARIO */
 .aquarium-column {
     display: flex;
     flex-direction: column;
@@ -232,7 +214,7 @@ body {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 60%; /* Aspect ratio 5:3 */
+    padding-bottom: 60%; 
     border-radius: 24px;
     overflow: hidden;
     border: 3px solid var(--ocean);
@@ -267,9 +249,7 @@ body {
     color: var(--ocean);
 }
 
-/* ============================= */
-/* PECES (NO MODIFICADOS VISUAL) */
-/* ============================= */
+/* PECES INTERACTIVOS */
 .fish-link {
     position: absolute;
     display: block;
@@ -292,16 +272,16 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(2px 2px 4px rgba(239, 230, 230, 0.929));
 }
 
 .fish-label {
     position: absolute;
-    top: -45px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--coral);
-    color: white;
+    background-color: var(--white);
+    color: var(--deep-blue);
     padding: 0.6rem 1.2rem;
     border-radius: 30px;
     font-size: 0.9rem;
@@ -309,13 +289,13 @@ body {
     pointer-events: none;
     transition: 0.3s;
     font-weight: 600;
-    border: 2px solid var(--deep-blue);
+    border: 2px solid var(--seafoam);
     white-space: nowrap;
 }
 
 .fish-link:hover .fish-label {
     opacity: 1;
-    transform: translateX(-50%) translateY(-5px);
+    transform: translateX(-50%) translateY(-2px);
 }
 
 @keyframes subtle-swim {
@@ -323,9 +303,7 @@ body {
     50% { transform: translateY(-6px); }
 }
 
-/* ============================= */
-/* SHOWCASE GRID                 */
-/* ============================= */
+/* SHOWCASE GRID */
 .fish-showcase {
     background-color: white;
     border-radius: 20px;
@@ -350,65 +328,100 @@ body {
     gap: 1.5rem;
 }
 
+/* FLIP CARDS */
 .fish-card {
-    background-color: white;
-    border: 1.5px solid #ddd;
-    border-radius: 16px;
-    padding: 1.5rem;
+    background-color: transparent;
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.fish-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    transition: all 0.3s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.fish-card:hover .fish-card-inner {
+    transform: rotateY(180deg);
+}
+
+.fish-card-front,
+.fish-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.fish-card:hover {
-    transform: translateY(-5px);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-color: var(--ocean);
 }
 
-.fish-icon {
-    background: var(--ocean) !important;
+.fish-card-front {
+    background: var(--seafoam);
+}
+
+.fish-card-back {
+    background: var(--coral);
+    transform: rotateY(180deg);
+}
+
+.fish-card-front .fish-icon {
+    background: rgba(255,255,255,0.2) !important;
     color: white;
     border-radius: 12px;
     padding: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid rgba(255,255,255,0.3); */
 }
 
-.fish-name {
+.fish-card-front .fish-name {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.3rem;
-    color: var(--deep-blue);
+    font-size: 1.5rem;
+    color: white;
     font-weight: 600;
 }
 
-.fish-desc {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.4;
+.fish-card-back .fish-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.fish-card-back .fish-desc {
+    font-size: 0.95rem;
+    color: white;
+    line-height: 1.6;
+    opacity: 0.95;
 }
 
 .fish-tag {
     display: inline-block;
-    background-color: var(--coral);
-    color: white;
-    padding: 0.3rem 0.8rem;
+    background-color: white;
+    color: var(--coral);
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-top: 0.5rem;
-    border: 1.5px solid var(--deep-blue);
+    margin-top: 1rem;
 }
 
-/* ============================= */
-/* FOOTER                        */
-/* ============================= */
+/* FOOTER */
 .main-footer {
     background-color: white;
     color: var(--text-light);
@@ -418,9 +431,7 @@ body {
     border-top: 2px solid var(--deep-blue);
 }
 
-/* ============================= */
-/* RESPONSIVE                    */
-/* ============================= */
+/* RESPONSIVE */
 @media (max-width: 968px) {
     .main-content {
         grid-template-columns: 1fr;
